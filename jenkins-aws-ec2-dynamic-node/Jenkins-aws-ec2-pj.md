@@ -1,15 +1,18 @@
-Perfect 🔥 Harshith! You want to create a **Markdown (MD) project documentation** showing how to set up **dynamic EC2 agents in Jenkins** — step-by-step, including screenshots (like the one you uploaded).
+Excellent, Harshith 👏 — your Markdown is 99% perfect!
+The only small issues are:
 
-Here’s a **ready-to-use `README.md`** template for your project — clean, professional, and GitHub-ready 👇
+* Code block fences (` ``` ` and ` `) were mismatched.
+* Some extra quote marks and spacing needed cleanup.
+* The nested code block (for the init script) inside a markdown code block needed correct escaping.
 
----
+Here’s the **fixed and fully valid Markdown version** ✅ — you can paste this directly into your GitHub `README.md`:
 
-````markdown
+
+
 # 🚀 Jenkins Dynamic EC2 Agent Setup (Amazon Linux)
 
 This guide explains how to configure **Jenkins** to automatically launch and terminate **Amazon EC2 instances** as build agents using the **Jenkins EC2 Plugin**.
 
----
 
 ## 🧩 Prerequisites
 
@@ -21,7 +24,7 @@ Before you begin, make sure you have:
 - ✅ AWS key pair (.pem) file downloaded.
 - ✅ Security group allowing SSH (port 22) and Jenkins (port 8080).
 
----
+
 
 ## ⚙️ Step 1: Install Jenkins EC2 Plugin
 
@@ -29,10 +32,7 @@ Before you begin, make sure you have:
 2. Search for **Amazon EC2** and install it.  
 3. Restart Jenkins after installation.
 
-📸 *Screenshot:*  
-![Install EC2 Plugin](images/step1-ec2-plugin-install.png)
 
----
 
 ## ☁️ Step 2: Configure AWS Credentials in Jenkins
 
@@ -42,9 +42,8 @@ Before you begin, make sure you have:
 4. Save the credentials.
 
 📸 *Screenshot:*  
-![AWS Credentials Configuration](images/step2-aws-credentials.png)
+<img width="1692" height="368" alt="Screenshot 2025-10-07 215232" src="https://github.com/user-attachments/assets/15f95cf8-bcab-43b7-9222-81b9b5da1281" />
 
----
 
 ## 🏗️ Step 3: Create a New EC2 Cloud in Jenkins
 
@@ -55,9 +54,9 @@ Before you begin, make sure you have:
    - **Region:** Choose your region (e.g., `us-east-1`)
 
 📸 *Screenshot:*  
-![EC2 Cloud Configuration](images/step3-ec2-cloud-config.png)
+<img width="1143" height="609" alt="Screenshot 2025-10-07 215150" src="https://github.com/user-attachments/assets/41753ae1-1f3b-46ef-b353-4984ff7a06eb" />
 
----
+
 
 ## 💡 Step 4: Add a New AMI Template
 
@@ -74,9 +73,10 @@ Click **Add** under the AMI section and fill out the details:
 | **Init Script** | Optional setup commands | `yum update -y` |
 
 📸 *Screenshot:*  
-![AMI Template Configuration](images/step4-ami-template.png)
 
----
+<img width="1328" height="720" alt="Screenshot 2025-10-07 224202" src="https://github.com/user-attachments/assets/f631b898-6af6-4dbc-bdc3-876e0784829e" />
+
+
 
 ## 🔑 Step 5: SSH & Host Key Settings
 
@@ -89,13 +89,13 @@ In the **Advanced** section:
 📸 *Screenshot:*  
 ![Host Key Verification](images/step5-ssh-verification.png)
 
----
+
 
 ## 🪄 Step 6: Init Script (Optional)
 
 If your AMI does **not include Java**, you can add this **init script**:
 
-```bash
+
 #!/bin/bash
 set -euo pipefail
 set -x
@@ -103,12 +103,9 @@ set -x
 sudo yum update -y
 sudo yum install -y java-21-amazon-corretto
 java -version
-````
 
-📸 *Screenshot:*
-![Init Script Configuration](images/step6-init-script.png)
 
----
+
 
 ## 🧰 Step 7: Verify Instance Creation
 
@@ -123,9 +120,7 @@ Once saved:
    * Register it as an agent.
 3. After the build finishes, Jenkins terminates the EC2 instance.
 
-📸 *Screenshot:*
-![Instance Launch in Jenkins](images/step7-instance-launch.png)
-
+📸 *Screenshot:* <img width="1087" height="500" alt="Screenshot 2025-10-07 231522" src="https://github.com/user-attachments/assets/12794050-cd4f-45e7-a2c1-a2b23ff872f5" /> 
 ---
 
 ## 🧾 Logs and Troubleshooting
@@ -138,8 +133,7 @@ Once saved:
   * ❌ “Cannot check key” → change verification to `check-new-soft`
   * ❌ Init script fails → increase launch timeout to `300s`
 
-📸 *Screenshot:*
-![Debug Logs](images/step8-debug-logs.png)
+
 
 ---
 
@@ -152,7 +146,9 @@ Once everything is set up, Jenkins will dynamically scale your agents:
 * **Terminate** idle agents after completion.
 
 📸 *Screenshot:*
-![Final Jenkins Dashboard](images/step9-final-dashboard.png)
+<img width="626" height="770" alt="Screenshot 2025-10-07 231645" src="https://github.com/user-attachments/assets/b6d4fe0a-8419-491a-b4bf-581e1d7dc4e3" />
+
+
 
 ---
 
@@ -161,17 +157,14 @@ Once everything is set up, Jenkins will dynamically scale your agents:
 * [Jenkins EC2 Plugin Documentation](https://plugins.jenkins.io/ec2/)
 * [AWS EC2 User Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
 
----
+
 
 ### 👨‍💻 Author
 
 **Harshith Reddy**
- DevOps Engineer
+DevOps Engineer
 GitHub: [@harshith6322](https://github.com/harshith6322)
 
-```
+
 
 ---
-
-
-```

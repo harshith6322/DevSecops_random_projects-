@@ -185,6 +185,11 @@ sudo systemctl enable nginx
 | 7    | Manage and update server           |
 
 ---
+## 📸 Screenshot 
+<img width="629" height="796" alt="Screenshot 2025-10-10 151641" src="https://github.com/user-attachments/assets/3e00cf7a-174a-4fba-af10-ba166f9d4f37" />
+
+
+---
 
 ## 📎 Notes
 
